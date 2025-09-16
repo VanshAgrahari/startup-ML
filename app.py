@@ -100,7 +100,7 @@ def perform_overall():
     ax.set_xlabel("Year",rotation=90)
     ax.set_ylabel("Total Investment (Rs in crore)",rotation=90)
     ax.grid(True)
-
+    plt.xticks(rotation=90)
     st.pyplot(fig)
 
     st.header('Sector Analysis')
