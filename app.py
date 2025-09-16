@@ -97,7 +97,7 @@ def perform_overall():
     ax.plot(bdf['my'], bdf['paisa'], marker='o', color='green')
 
     ax.set_title("Investment Over Years")
-    ax.set_xlabel("Year",rotation=0)
+    ax.set_xlabel("Year",rotation=90)
     ax.set_ylabel("Total Investment (Rs in crore)",rotation=90)
     ax.grid(True)
 
