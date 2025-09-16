@@ -100,6 +100,7 @@ def perform_overall():
     ax.set_xlabel("Year",rotation=90)
     ax.set_ylabel("Total Investment (Rs in crore)",rotation=90)
     ax.grid(True)
+    ax.set_xticks(bdf['year'][::5]) 
     plt.xticks(rotation=90)
     st.pyplot(fig)
 
