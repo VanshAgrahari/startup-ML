@@ -94,15 +94,26 @@ def perform_overall():
 
     bdf['my']=bdf['month'].astype(str)+" "+bdf['year'].astype(str)
     fig, ax = plt.subplots(figsize=(6, 4))
-    ax.plot(bdf['my'], bdf['paisa'], marker='o', color='green')
 
-    ax.set_title("Investment Over Years")
-    ax.set_xlabel("Year",rotation=90)
-    ax.set_ylabel("Total Investment (Rs in crore)",rotation=90)
-    ax.grid(True)
-    ax.set_xticks(bdf['year'][::5]) 
-    plt.xticks(rotation=90)
-    st.pyplot(fig)
+# Plot line graph
+ax.plot(bdf['year'], bdf['paisa'], marker='o', color='green')
+
+# Titles and labels
+ax.set_title("Investment Over Years")
+ax.set_xlabel("Year")
+ax.set_ylabel("Total Investment (Rs in crore)")
+
+# Grid
+ax.grid(True)
+
+# Set x-ticks every 5 years
+ax.set_xticks(bdf['year'][::5])
+
+# Rotate x-tick labels
+plt.xticks(rotation=90)
+
+# Show on Streamlit
+st.pyplot(fig)
 
     st.header('Sector Analysis')
     sector_item=st.selectbox('Sector Analysis on basis of',['Money','Count'])
