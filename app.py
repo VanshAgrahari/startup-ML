@@ -96,23 +96,20 @@ def perform_overall():
     fig, ax = plt.subplots(figsize=(6, 4))
 
 # Plot line graph
+fig, ax = plt.subplots(figsize=(10, 5))  # wider figure
+
 ax.plot(bdf['year'], bdf['paisa'], marker='o', color='green')
 
-# Titles and labels
 ax.set_title("Investment Over Years")
 ax.set_xlabel("Year")
 ax.set_ylabel("Total Investment (Rs in crore)")
 
-# Grid
 ax.grid(True)
 
-# Set x-ticks every 5 years
-ax.set_xticks(bdf['year'][::5])
+# Show every 5th year only
+ax.set_xticks(bdf['year'][::5])  
+ax.tick_params(axis='x', rotation=45)  # rotate labels
 
-# Rotate x-tick labels
-plt.xticks(rotation=90)
-
-# Show on Streamlit
 st.pyplot(fig)
 
     st.header('Sector Analysis')
